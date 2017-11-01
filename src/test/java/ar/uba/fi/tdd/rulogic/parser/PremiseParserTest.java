@@ -21,10 +21,6 @@ public class PremiseParserTest {
 		when(correct.isNamed("amigos")).thenReturn(true);
 		
 		assertTrue(premise.checkQuestion(correct));
-		verify(correct).argumentEquals(0, "ana");
-		verify(correct).argumentEquals(1, "maria");
-		verify(correct).argumentNumberIs(2);
-		verify(correct).isNamed("amigos");
 	}
 	
 	@Test
@@ -38,10 +34,6 @@ public class PremiseParserTest {
 		when(correct.isNamed("amigos")).thenReturn(true);
 		
 		assertTrue(premise.checkQuestion(correct));
-		verify(correct).argumentEquals(0, "ana");
-		verify(correct).argumentEquals(1, "maria");
-		verify(correct).argumentNumberIs(2);
-		verify(correct).isNamed("amigos");
 	}
 	
 	@Test
@@ -55,10 +47,6 @@ public class PremiseParserTest {
 		when(correct.isNamed("amigos")).thenReturn(true);
 		
 		assertFalse(premise.checkQuestion(correct));
-		verify(correct).argumentEquals(0, "ana");
-		verify(correct).argumentEquals(1, "maria");
-		verify(correct).argumentNumberIs(2);
-		verify(correct).isNamed("amigos");
 	}
 	
 	@Test
@@ -72,10 +60,6 @@ public class PremiseParserTest {
 		when(correct.isNamed("guachos")).thenReturn(true);
 		
 		assertFalse(premise.checkQuestion(correct));
-		verify(correct).argumentEquals(0, "ana");
-		verify(correct).argumentEquals(1, "maria");
-		verify(correct).argumentNumberIs(2);
-		verify(correct).isNamed("amigos");
 	}
 	
 	@Test
@@ -90,10 +74,6 @@ public class PremiseParserTest {
 		when(correct.isNamed("amigos")).thenReturn(true);
 		
 		assertFalse(premise.checkQuestion(correct));
-		verify(correct).argumentEquals(0, "ana");
-		verify(correct).argumentEquals(1, "maria");
-		verify(correct).argumentNumberIs(2);
-		verify(correct).isNamed("amigos");
 	}
 
 }

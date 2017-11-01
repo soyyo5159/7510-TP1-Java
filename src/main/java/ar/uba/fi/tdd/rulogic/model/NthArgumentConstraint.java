@@ -12,5 +12,9 @@ public class NthArgumentConstraint implements Constraint {
 	public boolean checkQuestion(Question q) {
 		return q.argumentEquals(this.argument, this.value);
 	}
+	
+	public String toString(){
+		return "I test "+value+" at "+argument;
+	}
 
 }

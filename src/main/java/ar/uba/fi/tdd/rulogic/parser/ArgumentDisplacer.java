@@ -18,7 +18,7 @@ public class ArgumentDisplacer {
 		this.output=output;
 	}
 
-	public int positionOf(int argument) throws ParseException {
+	public int positionOf(int argument) throws ParseException{ 
 		String argumentName=this.output.nameAt(argument);
 		List<String> arguments = this.header.getArguments();
 		if(!arguments.contains(argumentName)){
@@ -26,6 +26,10 @@ public class ArgumentDisplacer {
 		}
 		
 		return arguments.indexOf(argumentName);
+	}
+
+	public boolean hasDataAbout(int argument) {
+		return this.output.hasNameAt(argument);
 	}
 
 }

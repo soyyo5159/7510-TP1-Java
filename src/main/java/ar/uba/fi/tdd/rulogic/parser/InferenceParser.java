@@ -1,5 +1,6 @@
 package ar.uba.fi.tdd.rulogic.parser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -18,20 +19,22 @@ public class InferenceParser {
 	public Collection parse(String s) throws ParseException{
 		String clean = s.replace("\n", "").replace(" ", "");
 		List<String> parts = Arrays.asList(clean.split(":-"));
+		
 		if(parts.size()!=2){
+			
 			throw new ParseException("Not an inference: "+s);
 		}
 		
 		String header=parts.get(0);
 		String innerPremises=parts.get(1);
 		
+		
 		QuestionShapeParser parsedHeader=new QuestionShapeParser(header);
 		QuestionTranslatorFactory translatorFactory = new QuestionTranslatorFactory(parsedHeader);
 		QuestionConstraintParser constraintParser=new QuestionConstraintParser(this.answerer,translatorFactory);
 		
 		
-		
-		Set<Constraint> constraints=new HashSet<Constraint>();
+		List<Constraint> constraints=new ArrayList<Constraint>();
 		
 		//header constraints
 		Collection headerConstraint = PremiseParser.parse(header);
@@ -39,8 +42,8 @@ public class InferenceParser {
 		
 		
 		//body constraints
-		for(String text: innerPremises.split(",")){
-			Constraint constraint = constraintParser.parse(text);
+		for(String text: innerPremises.split("\\),")){
+			Constraint constraint = constraintParser.parse(text+")");
 			constraints.add(constraint);
 		}
 		

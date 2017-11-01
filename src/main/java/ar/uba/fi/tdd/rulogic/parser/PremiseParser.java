@@ -14,7 +14,7 @@ import ar.uba.fi.tdd.rulogic.model.Collection;
 public class PremiseParser {
 	public static Collection parse(String s) throws ParseException{
 		QuestionShapeParser q = new QuestionShapeParser(s);
-		Set<Constraint> constraints=new HashSet<Constraint>();
+		List<Constraint> constraints=new ArrayList<Constraint>();
 		
 		List<String> arguments = q.getArguments();
 		constraints.add(new NameConstraint(q.getName()));
@@ -23,7 +23,7 @@ public class PremiseParser {
 		
 		for(int i=0; i<arguments.size();i++){
 			String argument = arguments.get(i);
-			if(!argument.matches("^[A-Z]") && !argument.equals("_")){
+			if(!argument.matches("^[A-Z].*") && !argument.equals("_")){
 				constraints.add(new NthArgumentConstraint(i,argument));
 			}
 		}

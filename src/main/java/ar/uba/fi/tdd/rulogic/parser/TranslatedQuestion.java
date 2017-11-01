@@ -27,11 +27,24 @@ public class TranslatedQuestion implements Question {
 	@Override
 	public boolean argumentEquals(int argument, String value) {
 		try {
-			int displaced = this.argumentDisplacer.positionOf(argument);
+			int displaced = this.argumentDisplacer.positionOf(argument);//rompe acá
 			return this.source.argumentEquals(displaced,value);
+			
 		} catch (ParseException e) {
 			return this.output.argumentEquals(argument,value);
+		} catch (RuntimeException e) {
+			return this.output.argumentEquals(argument,value);
 		}
+	}
+	
+	@Override
+	public String toString(){
+		return this.source.toString();
+	}
+
+	@Override
+	public boolean hasArgument(int argument) {
+		return this.output.hasArgument(argument);
 	}
 
 }

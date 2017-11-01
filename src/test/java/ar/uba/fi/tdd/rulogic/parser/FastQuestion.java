@@ -54,5 +54,10 @@ public class FastQuestion implements Question{
 		return this.arguments.get(argument).equals(value);
 		
 	}
+
+	@Override
+	public boolean hasArgument(int argument) {
+		return this.arguments.size()<argument;
+	}
 	
 }

@@ -11,6 +11,7 @@ public class QuestionShapeParser {
 	public QuestionShapeParser(String s) throws ParseException{
 		String prepared=s.replaceAll(" ","").replaceAll("\n", "");
 		List<String> parts=Arrays.asList(prepared.split("\\("));
+		
 		if(parts.size()!=2){
 			throw new ParseException("Can't parse as question:"+prepared);
 		}

@@ -4,34 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class Collection implements Constraint {
-	private Set<Constraint> constraints;
+public class Collection implements Constraint, Answerer {
+	private List<Constraint> constraints;
 	private AccumulationStrategy strategy;
 	
-	private Collection(Set<Constraint> constraints,AccumulationStrategy strategy){
+	private Collection(List<Constraint> constraints,AccumulationStrategy strategy){
 		this.constraints=constraints;
 		this.strategy=strategy;
 	}
 	
 	public boolean checkQuestion(Question q) {
-		List<Boolean> results = new ArrayList<Boolean>();
-		for(Constraint c:constraints){
-			Boolean result = c.checkQuestion(q);
-			results.add(result);
-		}
-		
-		boolean ret = results.stream()
-				.reduce(this.strategy.getDefaultValue(),(x,y)->this.strategy.accumulate(x,y));
-		return ret;
-		
+		boolean result = this.strategy.checkQuestion(this.constraints,q);
+		return result;
 	}
 	
-	static public Collection createConjunction(Set<Constraint> constraints){
+	static public Collection createConjunction(List<Constraint> constraints){
 		return new Collection(constraints,new ConjunctionStrategy());
 	}
 	
-	static public Collection createDisjunction(Set<Constraint> constraints){
+	static public Collection createDisjunction(List<Constraint> constraints){
 		return new Collection(constraints,new DisjunctionStrategy());
+	}
+
+	@Override
+	public boolean answer(Question q) {
+		return checkQuestion(q);
 	}
 
 }

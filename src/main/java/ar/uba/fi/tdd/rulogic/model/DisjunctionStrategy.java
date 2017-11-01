@@ -3,6 +3,8 @@
  */
 package ar.uba.fi.tdd.rulogic.model;
 
+import java.util.List;
+
 /**
  * @author José
  *
@@ -10,13 +12,14 @@ package ar.uba.fi.tdd.rulogic.model;
 public class DisjunctionStrategy implements AccumulationStrategy {
 
 	@Override
-	public boolean accumulate(boolean x, boolean y) {
-		return x || y;
-	}
-	
-	@Override
-	public Boolean getDefaultValue() {
+	public boolean checkQuestion(List<Constraint> constraints, Question q) {
+		for(Constraint c:constraints){
+			if(c.checkQuestion(q)){
+				return true;
+			}
+		}
 		return false;
 	}
+
 
 }
