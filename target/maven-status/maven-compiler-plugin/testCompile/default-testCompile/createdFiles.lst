@@ -1,6 +1,5 @@
 ar\uba\fi\tdd\rulogic\parser\InferenceParserTest.class
 ar\uba\fi\tdd\rulogic\parser\TranslatedQuestionTest.class
-ar\uba\fi\tdd\rulogic\model\KnowledgeBaseTest.class
 ar\uba\fi\tdd\rulogic\parser\DatabaseParserTest.class
 ar\uba\fi\tdd\rulogic\parser\PremiseParserTest.class
 ar\uba\fi\tdd\rulogic\parser\FastQuestion.class

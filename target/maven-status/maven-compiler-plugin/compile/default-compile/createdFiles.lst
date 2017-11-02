@@ -3,7 +3,6 @@ ar\uba\fi\tdd\rulogic\model\Answerer.class
 ar\uba\fi\tdd\rulogic\model\NoModifier.class
 ar\uba\fi\tdd\rulogic\model\Question.class
 ar\uba\fi\tdd\rulogic\model\AccumulationStrategy.class
-ar\uba\fi\tdd\rulogic\model\KnowledgeBase.class
 ar\uba\fi\tdd\rulogic\App.class
 ar\uba\fi\tdd\rulogic\parser\InferenceParser.class
 ar\uba\fi\tdd\rulogic\parser\TranslatedQuestion.class
@@ -13,6 +12,7 @@ ar\uba\fi\tdd\rulogic\model\NameConstraint.class
 ar\uba\fi\tdd\rulogic\parser\QuestionConstraintParser.class
 ar\uba\fi\tdd\rulogic\model\DisjunctionStrategy.class
 ar\uba\fi\tdd\rulogic\parser\QuestionTranslatorFactory.class
+ar\uba\fi\tdd\rulogic\KnowledgeBase.class
 ar\uba\fi\tdd\rulogic\model\Constraint.class
 ar\uba\fi\tdd\rulogic\parser\ArgumentDisplacer.class
 ar\uba\fi\tdd\rulogic\model\QuestionConstraint.class

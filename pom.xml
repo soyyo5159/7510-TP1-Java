@@ -32,14 +32,6 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
-		
-		<dependency>
-		  <groupId>maven-plugins</groupId>
-		  <artifactId>maven-(PLUGIN_NAME)-plugin</artifactId>
-		  <version>(PLUGIN_VERSION)</version>
-		  <type>plugin</type>
-		</dependency>
-
 	</dependencies>
 
 	<build>
